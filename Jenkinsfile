@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'docker-jenkins'
+        label 'manu-docker-slave'
     }
     stages {
         stage('build') {
