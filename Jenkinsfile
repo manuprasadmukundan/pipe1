@@ -12,13 +12,6 @@ pipeline {
             }
         }
 
-        stage('Build and Run Docker Container') {
-            steps {
-                script {
-                   
-                }
-            }
-        }
 
         
     }
