@@ -1,20 +1,33 @@
 pipeline {
-    agent any
+    agent {
+        // Specify the label associated with the configured agent 'Manudocker'
+        label 'Manudocker'
+    }
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building..'
+                // Example: Checkout code from a Git repository
+                git 'https://github.com/manuprasadmukundan/pipe1.git'
             }
         }
-        stage('Test') {
+
+        stage('Build and Run Docker Container') {
             steps {
-                echo 'Testing..'
+                script {
+                   
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+
+        
+    }
+
+    post {
+        success {
+            // Cleanup Docker resources after a successful build
+            script {
+               sh 'echo "code is compelted"'
             }
         }
     }
