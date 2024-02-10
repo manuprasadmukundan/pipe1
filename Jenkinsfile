@@ -1,26 +1,9 @@
 pipeline {
-    agent {
-        // Specify the label associated with the configured agent 'Manudocker'
-        label 'Manudocker'
-    }
-
+    agent { docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' } }
     stages {
-        stage('Checkout') {
+        stage('build') {
             steps {
-                // Example: Checkout code from a Git repository
-                git 'https://github.com/manuprasadmukundan/pipe1.git'
-            }
-        }
-
-
-        
-    }
-
-    post {
-        success {
-            // Cleanup Docker resources after a successful build
-            script {
-               sh 'echo "code is compelted"'
+                sh 'mvn --version'
             }
         }
     }
