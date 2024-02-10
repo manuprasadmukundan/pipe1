@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'docker-Manuprasad'
+        label 'manumachine'
     }
     stages {
         stage('build') {
